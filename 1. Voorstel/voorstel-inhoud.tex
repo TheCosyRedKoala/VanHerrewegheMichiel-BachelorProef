@@ -1,0 +1,63 @@
+%---------- Inleiding ---------------------------------------------------------
+
+\section{Introductie}%
+\label{sec:introductie}
+
+Een bedrijf (Goossens NV) heeft enkele copycentra, waar ze momenteel nog steeds werken met een kassasysteem dat geschreven werd in COBOL. Op het einde van de dag wanneer de winkel sluit, moet steeds een dagrapport worden gemaakt en deze worden dan op een floppydisk geplaatst. Aan het begin van de voorbije zomer liep Goossens NV tegen het probleem aan dat er geen floppydisks meer geproduceerd worden. Dit heeft als gevolg dat de dagrapporten niet meer bewaard kunnen worden. In dit onderzoek zal nagegaan worden of .NET MAUI, een cross-platform programmeertaal, al voldoende ontwikkeld is om een nieuw real-time kassasysteem te kunnen worden ontwikkeld.
+
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{State-of-the-art}%
+\label{sec:state-of-the-art}
+
+\subsection{Cross-platform development}
+Cross-platform development, ook wel multi-platform development genoemd, is een manier van ontwikkelen dat toelaat om met één programmeertaal en bijgevolg één codebase een applicatie te ontwikkelen die op verschillende platformen kan draaien \autocite{KotlinFoundation2022}. 
+
+\subsubsection{Native development VS cross-platform development}
+De term “native development” geeft aan dat een applicatie uitsluitend ontwikkeld wordt voor één bepaald platform, bijvoorbeeld iOS. De applicatie wordt geprogrammeerd met de door dat platform voorziene programmeertaal en hulpmiddelen \autocite{Marchuk}.
+
+Om native Android-applicaties te schrijven, moet de developer gebruik maken van Java of Kotlin. De talen, die dan weer native ondersteund worden door het iOS platform, zijn Objective-C en Swift \autocite{Schmitt2022}.
+
+\subsubsection{.NET MAUI}
+.NET MAUI is de uitgebreide evolutie van Xamarin.Forms om niet alleen mobiele applicaties te ontwikkelen, maar ook desktopapplicaties. .NET MAUI verenigt Android, iOS, macOS en Windows API’s in een enkele API  die het toelaat om met één codebase applicaties te ontwikkelen voor de verschillende platformen \autocite{Britch2022}.
+
+\subsection{Real-time applicaties}
+De term real-time applicatie wordt door \textcite{Lutkevich2022} als volgt gedefinieerd:
+“Real-time-toepassingen zijn toepassingen die binnen een onmiddellijk tijdskader werken; zij detecteren, analyseren en handelen op streaming gegevens terwijl die zich voordoen. Dit in tegenstelling tot een database-gerichte toepassing waarbij informatie wordt opgenomen en opgeslagen in een database (in de cloud of op locatie) voor toekomstige analyse.”
+
+Om de werking van real-time applicaties te kunnen verduidelijken, moet het websocket protocol uitgelegd worden.
+
+\subsubsection{HyperText Transfer Protocol}
+HyperText Transfer Protocol, ook wel gekend als HTTP, is het standaard protocol dat webbrowsers gebruiken om informatie op te vragen bij de server. HTTP werkt volgens het client-server principe. Dit houdt in dat de client, in de meeste gevallen de webbrowser, steeds een dataverzoek stuurt naar de server. Deze zal op zijn beurt dan een de gewenste data verzamelen en terugsturen als een document van een bepaald type. Dit kan bijvoorbeeld gaan over HTML-documenten voor webpagina’s of JSON-documenten om data te transfereren \autocite{MDN2022}.
+
+Zoals hierboven beschreven is HTTP unidirectioneel. Dit wil zeggen dat de data-aanvragen enkel en alleen kunnen worden opgestart door een client en kunnen alleen beantwoord worden door server. Na versturen van het antwoord wordt de verbinding verbroken \autocite{MDN2022}.
+
+\subsubsection{WebSocket}
+WebSocket is een bidirectioneel protocol die dezelfde noden vervult als HTTP, maar in tegenstelling tot HTTP is WebSocket een stateful protocol. Hiermee wordt bedoeld dat de verbinding tussen de client en de server in stand wordt gehouden ook al is de data aanvraag verwerkt. De enige manier om de verbinding te verbreken is wanneer één van de twee partijen besluit om de verbinding stop te zetten. Een groot verschil met HTTP is ook dat de communicatie bij WebSocket bidirectioneel is, wat wil zeggen dat de client de server kan aanspreken, maar ook dat de server de client kan aanspreken \autocite{GeeksforGeeks2022}.
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}%
+\label{sec:methodologie}
+
+Het huidige kassasysteem werkt als volgt: een klant komt binnen in één van de copy centra en krijgt een printer aangewezen door de verko(o)p(st)er die op dat moment in de winkel staat. Eens de klant het printproces gestart heeft, wordt er per geprinte pagina een klik doorgestuurd naar een elektronisch bord. Dit bord weet op welke interface de klik binnengekomen is, welke printer het signaal verstuurd heeft en vertaalt dit dan naar een digitaal signaal dat verstuurd wordt naar het kassasysteem. Eens het signaal aangekomen, wordt de GUI geüpdatet zodat op het einde van het printproces de verkoopster exact weet hoeveel pagina’s er geprint zijn en hoeveel het te betalen totaal is.
+Om na te gaan of .NET MAUI al voldoende ontwikkeld is voor deze toepassing zal er een proof-of-concept opgezet worden. In de eerste fase zal er uitgezocht worden of het analoge signaal, de zogenaamde klik, kan worden opgevangen door een Raspberry Pi en kan worden vertaald naar een digitaal signaal.
+
+In het tweede luik van het onderzoek zal er een .NET MAUI-applicatie worden ontwikkeld die het huidige COBOL-kassasysteem moet vervangen. Deze applicatie moet zichzelf steeds kunnen updaten wanneer er een klik binnenkomt van de printer. Om dit te kunnen verwezenlijken zal er ook een API opgezet worden. Deze API moet het mogelijk maken om door de Raspberry Pi aangesproken te worden elke keer dat er een klik van een printer binnenkomt. Daarnaast moet de API ook de client kunnen updaten na elke klik. Deze feature zal dan ook geïmplementeerd worden met behulp van SignalR. Een .NET library die het toelaat om real-time applicatie op te zetten. SignalR maakt het mogelijk om op basis van websockets bidirectioneel te communiceren tussen de client en de server. Met andere woorden de client kan data opvragen indien nodig aan de server, maar de server kan ook zonder aanvraag van de client data doorgeven. De bidirectionele communicatie moet verhelpen dat de client steeds na een aantal seconden aan de server moet vragen of er al nieuwe kliks zijn binnengekomen.
+
+In de laatste fase zal er worden nagegaan of de applicatie gemakkelijk en zonder al te veel problemen vertaald kan worden naar een Android-applicatie. Deze zou het mogelijk moeten maken om op het einde van de dag een pushmelding te sturen zodat de dagrapporten van de copycentra opgehaald en bekeken kunnen worden.
+
+Om te weten of .NET MAUI voldoende ontwikkeld is voor om de huidige applicatie te vervangen zal er een meting gebeuren. De meting in kwestie zal starten vanaf het moment dat de printer één klik verstuurt en stopt op het moment dat de grafische interface zichzelf update. 
+Daarnaast zal er ook gekeken worden naar developer experience bij het ontwikkelen in .NET MAUI. Hier wordt er nagegaan of de ”intellisense”, een helper tool die suggesties geeft tijdens het programmeren, goed werkt, met andere woorden worden de juiste suggesties gegeven tijdens het programmeren. Ook zal er gekeken worden of er nog integratiebugs in Visual Studio zitten: krijg je foutmeldingen van Visual Studio die niets te maken hebben met de code, maar met de .NET MAUI integratie etc.
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwacht resultaat}%
+\label{sec:verwachte_resultaten}
+
+De metingen zouden moeten uitwijzen dat de .NET MAUI een grote stap vooruit is in vergelijking met de huidige kassa-applicatie geschreven in COBOL. De .NET applicatie zou sneller moeten reageren dan de huidige applicatie.
+Daarnaast zou de developer experience al zodanig gevorderd zijn dat er slechts kleine bugs overschieten in de integratie van .NET MAUI en Visual Studio. Het zou mogelijk moeten zijn om .NET MAUI te gebruiken om een productiewaardige applicatie te ontwikkelen.
+
+\section{Verwachte conclusie}
+\label{sec:verwachte_conclusie}
+
+.NET MAUI is een product dat nog steeds volop in ontwikkeling is. Dit kan er dan ook voor zorgen dat de developer experience nog niet optimaal is: de “intellisense” geeft geen of foute suggesties, Visual Studio geeft foutmeldingen die niets te maken hebben met de geschreven code, de applicatie crasht vanzelf soms etc. Als men toch wenst .NET MAUI al te gebruiken, zou dit echter wel mogelijk moeten zijn. Men moet enkel opletten bij het gebruik van bepaalde features en packages.
+Desondanks de kleine ongemakken is .NET MAUI toch de toekomst van cross-platform development waar kleinere development-teams die een applicatie moeten ontwikkelen voor meerdere platformen gretig gebruik van zullen maken.
