@@ -3,7 +3,7 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Een bedrijf (Goossens NV) heeft enkele copycentra, waar ze momenteel nog steeds werken met een kassasysteem dat geschreven is in COBOL. Op het einde van de dag wanneer de winkel sluit, moet steeds een dagrapport worden gemaakt en deze worden dan op een floppydisk geplaatst. Aan het begin van afgelopen zomer stoot het het bedrijf op het probleem dat er geen floppydisks meer geproduceerd worden. Dit heeft als gevolg dat de dagrapporten niet meer bewaard kunnen worden. In dit onderzoek zal worden nagegaan of .NET MAUI, een cross-platform programmeertaal, al voldoende ontwikkeld is om een nieuw real-time kassasysteem op te zetten.
+Een bedrijf (Goossens NV) heeft enkele copycentra, waar ze momenteel nog steeds werken met een kassasysteem dat geschreven is in COBOL. Op het einde van de dag wanneer de winkel sluit, moet steeds een dagrapport worden gemaakt en deze worden dan op een floppydisk geplaatst. Aan het begin van afgelopen zomer stoot het bedrijf op het probleem dat er geen floppydisks meer geproduceerd worden. Dit heeft als gevolg dat de dagrapporten niet meer bewaard kunnen worden. In dit onderzoek zal worden nagegaan of .NET MAUI, een cross-platform programmeertaal, al voldoende ontwikkeld is om een nieuw real-time kassasysteem op te zetten.
 
 %---------- Stand van zaken ---------------------------------------------------
 
@@ -38,15 +38,21 @@ WebSocket is een bidirectioneel protocol die dezelfde noden vervult als HTTP, ma
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
-
 Het huidige kassasysteem werkt als volgt: een klant komt binnen in één van de copy centra en krijgt een printer aangewezen door de verko(o)p(st)er die op dat moment in de winkel staat. Eens de klant het printproces gestart heeft, wordt er per geprinte pagina een klik doorgestuurd naar een elektronisch bord. Dit bord weet op welke interface de klik binnengekomen is, welke printer het signaal verstuurd heeft en vertaalt dit dan naar een digitaal signaal dat verstuurd wordt naar het kassasysteem. Eens het signaal is aangekomen, wordt de GUI geüpdatet zodat op het einde van het printproces de verkoopster exact weet hoeveel pagina’s er geprint zijn en hoeveel het te betalen totaal is.
+
+Hieruit kunnen volgende onderzoeksvragen naar voor geschoven worden:
+\begin{enumerate}
+    \item Is .NET MAUI voldoende ontwikkeld om het bestaande kassasysteem te vervangen?
+    \item  Is het mogelijk om de desktop applicatie te vertalen naar een mobiel platform?
+    \item Is de ontwikkelde .NET MAUI-applicatie sneller in het verwerken van de printerklik dan de huidige applicatie. 
+\end{enumerate}
 Om na te gaan of .NET MAUI al voldoende ontwikkeld is voor deze toepassing zal er een proof-of-concept opgezet worden. In de eerste fase zal er uitgezocht worden of het analoge signaal, de zogenaamde klik, kan worden opgevangen door een Raspberry Pi en kan worden vertaald naar een digitaal signaal.
 
-In het tweede luik van het onderzoek zal er een .NET MAUI-applicatie worden ontwikkeld die het huidige COBOL-kassasysteem moet vervangen. Deze applicatie moet zichzelf steeds kunnen updaten wanneer er een klik binnenkomt van de printer. Om dit te kunnen verwezenlijken zal er ook een API opgezet worden. Deze API moet het mogelijk maken om door de Raspberry Pi aangesproken te worden elke keer dat er een klik van een printer binnenkomt. Daarnaast moet de API ook de client kunnen updaten na elke klik. Deze feature zal dan ook geïmplementeerd worden met behulp van SignalR. Een .NET library die het toelaat om real-time applicatie op te zetten. SignalR maakt het mogelijk om op basis van websockets bidirectioneel te communiceren tussen de client en de server. Met andere woorden de client kan data opvragen aan de server indien nodig, maar de server kan ook zonder aanvraag van de client data doorgeven. De bidirectionele communicatie moet verhelpen dat de client steeds na een aantal seconden aan de server moet vragen of er al nieuwe kliks zijn binnengekomen.
+In het tweede luik van het onderzoek zal er een .NET MAUI-applicatie worden ontwikkeld die het huidige COBOL-kassasysteem moet vervangen. Deze applicatie moet zichzelf steeds kunnen updaten wanneer er een klik binnenkomt van de printer. Om dit te kunnen verwezenlijken zal er ook een API (Application Programming Interface) opgezet worden. Deze API moet het mogelijk maken om door de Raspberry Pi aangesproken te worden elke keer dat er een klik van een printer binnenkomt. Daarnaast moet de API ook de client kunnen updaten na elke klik. Deze feature zal dan ook geïmplementeerd worden met behulp van SignalR. Een .NET library die het toelaat om real-time applicatie op te zetten. SignalR maakt het mogelijk om op basis van websockets bidirectioneel te communiceren tussen de client en de server. Met andere woorden de client kan data opvragen aan de server indien nodig, maar de server kan ook zonder aanvraag van de client data doorgeven. De bidirectionele communicatie moet verhelpen dat de client steeds na een aantal seconden aan de server moet vragen of er al nieuwe kliks zijn binnengekomen.
 
 In de laatste fase zal er worden nagegaan of de applicaties vertaald kan worden naar een Android-applicatie. Deze zou het mogelijk moeten maken om op het einde van de dag een pushmelding te sturen zodat de dagrapporten van de copycentra opgehaald en bekeken kunnen worden.
 
-Om te weten of .NET MAUI voldoende ontwikkeld is om de huidige applicatie te vervangen, wal er een meting gebeuren. De meting in kwestie zal starten vanaf het moment dat de printer één klik verstuurt en stopt op het moment dat de grafische interface zichzelf update. 
+Om te weten of .NET MAUI voldoende ontwikkeld is om de huidige applicatie te vervangen, zal er een meting gebeuren. De meting in kwestie zal starten vanaf het moment dat de printer één klik verstuurt en stopt op het moment dat de grafische interface zichzelf update. 
 Daarnaast zal er ook gekeken worden naar developer experience bij het ontwikkelen in .NET MAUI. Hier wordt er nagegaan of de ”intellisense”, een helper tool die suggesties geeft tijdens het programmeren, goed werkt. Met andere woorden; worden de juiste suggesties gegeven tijdens het programmeren. Ook zal er gekeken worden of er nog integratiebugs in Visual Studio zitten: krijg je foutmeldingen van Visual Studio die niets te maken hebben met de code, maar met de .NET MAUI integratie etc.
 
 %---------- Verwachte resultaten ----------------------------------------------
