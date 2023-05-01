@@ -11,5 +11,69 @@
 %% mogelijke manier toegepast hebt om een antwoord te vinden op de
 %% onderzoeksvraag.
 
-\lipsum[21-25]
+\subsubsection{Inleiding}
+% TODO: check inleiding
+Tijdens het opstellen van deze bachelorproef hebben twee grote activiteiten plaatsgevonden, namelijk een literaire studie en het opstellen van een proof-of-concept. 
 
+\begin{itemize}
+    \item Literaire studie
+    
+    De literaire studie heeft als doel een gepast referrentiekader te geven voor elke lezer van deze proef.
+    
+    \item proof-of-concept
+    
+    Het doel van de proof-of-concept is om een conclusie te kunnen vormen op de onderzoeksvraag.
+\end{itemize}
+
+In dit hoofdstuk wordt de wijze waarop deze twee activiteiten zijn uitgevoerd verduidelijkt.
+
+\section{Theoretisch onderzoek}
+\subsection{Fase 1}
+Het doel van de eerste fase van het literaire onderzoek was het bepalen van de in dit onderzoek op te nemen onderwerpen. 
+
+Hierbij was het van groot belang dat de lezer van deze proef de juiste contextualisering krijgt. Daarnaast was het ook belangrijk om enkel de juiste onderwerpen te vermelden.
+
+\subsection{Fase 2}
+De doelstelling van deze fase was onderzoek te voeren naar de geschiedenis van de COBOL programmeertaal en hoeveel er nog gebruik gemaakt wordt van deze programmeertaal in de huidige technologische markt.
+
+\subsection{Fase 3}
+Tijdens deze fase werd er onderzocht wat native en cross-platform development is en welke voor- en nadelen deze twee manieren van werken met zich meebrengen.
+
+\subsection{Fase 4}
+Tijdens fase 4 werd er onderzoek gedaan naar wat .NET MAUI is, hoe het werkt, hoe het zich verhoudt ten op zichte van zijn voorganger Xamarin.Forms en hoe de toekomst eruitziet voor het nieuwste framework van Microsoft.
+
+\subsection{Fase 5}
+Bij het uitvoeren van het onderzoek voor deze fase werd er getracht om eerst de term ``real-time applicatie'' te definiëren, waarna werd onderzocht wat het HTTP protocol is en hoe dit geëvolueerd is ten opzichte van de eerste versie. Daarna werd onderzocht wat het WebSocket protocol is en waarom dit ontwikkeld is. Tot slot werd de SignalR bibliotheek van Microsoft bestudeerd in verband met het real-time programmeren binnen .NET.
+
+\section{Proof-of-concept}
+Na het uitvoeren van het literaire onderzoek werd de proof-of-concept opgezet. Ook dit werd gefaseerd uitgevoerd.
+
+\subsection{Fase 1}
+Tijdens deze fase werd eerst en vooral een opsomming gemaakt van welke applicaties er nodig zijn om de proof-of-concept volledig op te kunnen zetten en welke apparatuur en software hiervoor noodzakelijk zijn.
+
+Daarna werd de systeemarchitectuur opgesteld. Hiervoor werd een schema gemaakt van welke apparaten met elkaar in verbinding zouden staan en welke applicaties op welke apparaten zouden draaien.
+
+Tot slot werd het domeinklassediagram ontworpen. Dit diagram toont welke klassen er nodig zijn, welke associaties, eigenschappen en methoden deze hebben.
+
+\subsection{Fase 2}
+In fase 2 werd het domeinklassediagram omgezet in concrete klassen en werden enkele van deze klassen getest om te controleren of de geïmplementeerde logica het verwachte resultaat oplevert.
+
+\subsection{Fase 3}
+Deze fase had als doelstelling het volledig implementeren van de applicaties die in de winkel moeten draaien, namelijk: de management API, de operations API en de operations client. 
+
+De management API moet een winkel-, printer- en staffelobject kunnen configureren en persisteren in de databank.
+
+De operations API moet een verkoopobject kunnen aanmaken, het totaal te betalen bedrag kunnen berekenen, de digitale signalen, uitgestuurd door het python script, ontvangen en de tellerstanden van de printers op de GUI updaten.
+
+De operations client dient als grafische interface voor de winkelverantwoordelijke. Deze moet toelaten om de huidige tellerstand van de printers te bekijken, het commando uitsturen om het totaal te betalen bedrag te berekenen, een verkoop te registreren en bij het afsluiten van het systeem moet er een aanvraag verstuurd worden naar de reporting API.
+
+\subsection{Fase 4}
+Tijdens deze fase werd het python script geschreven. Dit script moest dienen om te luisteren naar de seriële verbinding tussen de Arduino en Raspberry Pi en indien er boodschappen staan te wachten, deze berichten decoderen. Eens deze gedecodeerd zijn wordt er een PATCH-aanvraag verstuurd naar de operations API met als parameter het interfacenummer waarop het analoge signaal geregistreerd werd.
+
+\subsection{Fase 5}
+Bij het uitvoeren van fase 5 was het de bedoeling om de dagrapporten applicaties volledig te implementeren. Concreet betekent dit dat de reporting API werd opgesteld. Deze heeft als doel om een nieuw dagrapport voor een winkel te genereren, te persisteren in de databank en een push-notificatie te versturen naar de reporting client.
+
+Daarnaast werd ook de reporting client ontwikkeld. Dit is een mobiele applicatie die dient als dashboard waarop de zaakvoerder bepaalde datavisualisaties kan bekijken omtrent het aantal verkopen in de copycentra. Deze moet de push-notificatie verzonden door de reporting API ontvangen en een melding geven aan de zaakvoerder dat er een nieuw dagrapport beschikbaar is.
+
+\subsection{Fase 6}
+Na het opstellen van de proof-of-concept is er ook nog een extra tool ontwikkeld om metingen uit te kunnen voeren. Deze verstuurt een digitaal signaal analoog aan het signaal dat verstuurd wordt door de Arduino. Het tijdstip waarop het signaal verstuurd en beantwoord wordt, wordt geregistreerd. Daarna wordt het tijdsverschil tussen deze twee punten berekend en weggeschreven naar een CSV-file (Comma Seperated Value). Met andere woorden, deze tool simuleert het python listener script en meet de responsetijd van de .NET MAUI applicatie.

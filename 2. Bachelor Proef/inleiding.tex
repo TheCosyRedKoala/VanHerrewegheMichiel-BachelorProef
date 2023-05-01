@@ -5,32 +5,59 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
-
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
-
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Goossens NV, een bedrijf dat in gereviseerde printers doet, heeft ook enkele copycentra waar momenteel een zogenaamd \emph{''Point-Of-Sale-systeem''} draait. Dit is geschreven in de COBOL-programmeertaal. Aan het einde van elke dag wordt de kassa afgesloten en wordt door het systeem steeds een dagrapport gegenereerd en opgeslagen op een floppydisk. Echter aan het begin van de zomer stootte het bedrijf op het probleem dat er geen floppydisks meer geproduceerd werden. Daarnaast is het tegenwoordig ook verplicht om elektronische betalingen mogelijk te maken. Deze zaken zorgden er dan ook voor dat er nood was aan het moderniseren van het POS-systeem.
+
+Dit onderzoek gaat na of het .NET MAUI framework van Microsoft al voldoende matuur is om het bestaande POS-systeem geschreven in COBOL te vervangen door een .NET MAUI-applicatie.
+
+Het .NET MAUI framework werd gekozen voor dit onderzoek omdat dit framework enkele voordelen met zich meebrengt:
+
+\begin{enumerate}
+    \item Integratie
+    
+    .NET MAUI maakt deel uit van het .NET-ecosysteem. Dit laat toe om in de toekomst meer tools en/of applicaties te ontwikkelen die simpel te integreren zijn met het kassasysteem.
+    
+    \item Gebruikersinterface definitie met HTML
+    
+    Het .NET MAUI framework laat toe om de gebruikersinterface te definiëren met twee verschillende programmeertalen: XAML en HTML. Voor ontwikkelaars die gewend zijn van webapplicaties te ontwikkelen is de stap naar .NET MAUI aanzienlijk kleiner aangezien zij geen nieuwe taal moeten leren.
+    
+    \item Cross-platform
+    
+    Indien in de toekomst het kassasysteem op een mobiel platform zoals iOS of Android moet draaien, dan is dit mogelijk met een .NET MAUI applicatie. Dit framework laat toe om met één codebase applicaties te ontwikkelen voor meerdere platformen.
+\end{enumerate}
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+De onderzoeksvraag voor dit onderzoek luidt als volgt: is .NET MAUI al voldoende matuur om een bestaande POS-systeem geschreven in COBOL te vervangen.
+
+Om dit te kunnen onderzoeken zijn er enkele subonderzoeksvragen die moeten leiden tot een conclusie op de hoofdvraag:
+
+\begin{enumerate}  
+    \item Wat is de gemiddelde reactiesnelheid van de .NET MAUI applicatie en hoe verhoudt deze zich ten opzichte van de gemiddelde reactiesnelheid van het huidige systeem?
+    
+    \item Laat .NET MAUI het toe om push-notificatie te versturen?
+\end{enumerate}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+Tijdens dit onderzoek zal een proof-of-concept opgezet worden die het volledige systeem van een copycenter simuleert. Tijdens het opzetten zal getracht worden om een python script te maken die het analoge signaal van een printer opvangt en omvormt naar een digitaal signaal met een payload. Ook zal nagegaan worden of .NET MAUI het toelaat om push-notificatie te versturen.
+
+Daarna zullen metingen op de proof-of-concept en op het huidige systeem uitgevoerd worden. Deze zullen de gemiddelde reactiesnelheid applicaties peilen en vergelijken met elkaar.
+
+De proef is een partieel succes indien:
+\begin{itemize}
+    \item De gemiddelde reactiesnelheid van de .NET MAUI-applicatie sneller is dan de gemiddelde reactiesnelheid van het huidige POS-systeem.
+\end{itemize}
+
+De gehele proef is een succes indien:
+
+\begin{itemize}
+    \item Het versturen van push-notificaties mogelijk is met .NET MAUI.
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
@@ -45,6 +72,6 @@ In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand v
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In Hoofdstuk~\ref{ch:methodologie} wordt de opzet van de proof-of-concept besproken en uitgelegd welke metingen op deze proof-of-concept uitgevoerd zijn.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.

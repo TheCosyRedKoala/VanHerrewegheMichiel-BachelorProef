@@ -9,22 +9,22 @@
 
 \subsubsection{Inleiding}
 
-In dit hoofdstuk worden een aantal zaken besproken met het oog op de contextualisering van de studie. Allereerst zal kort er in gegaan worden op de programmeertaal COBOL. Daarna wordt het verschil belicht tussen native en cross-platform ontwikkeling, elk met zijn eigen voor- en nadelen. Nadien volgt een bespreking van het .NET MAUI framework. Tenslotte zal ook het onderwerp real time toepassingen worden toegelicht.
+In dit hoofdstuk worden een aantal zaken besproken met het oog op de contextualisering van de studie. Allereerst zal kort ingegaan worden op de programmeertaal COBOL. Daarna wordt het verschil belicht tussen native en cross-platform ontwikkeling, elk met zijn eigen voor- en nadelen. Nadien volgt een bespreking van het .NET MAUI framework. Tenslotte zal ook het onderwerp real time toepassingen worden toegelicht.
 
 \section{COBOL}
 \subsection{Een korte geschiedenis van COBOL}
-In de jaren vijftig was de informatica vooral gericht op de rekenkracht van computers, die vooral in de wiskunde en de wetenschap kon worden gebruikt. Financiële instellingen zagen echter ook de voordelen van computertoepassingen in het bedrijfsleven. In 1959 pleitte Mary Haws voor de ontwikkeling van een programmeertaal die kon worden gebruikt voor zakelijke doeleinden, zoals salarisadministratie, inventarisatie en analyse van bedrijfsgegevens \autocite{NMAH2013}.
+In de jaren vijftig was de informatica vooral gericht op de rekenkracht van computers, die voornamelijk in de wiskunde en de wetenschap kon worden gebruikt. Financiële instellingen zagen echter ook de voordelen van computertoepassingen in het bedrijfsleven. In 1959 pleitte Mary Haws voor de ontwikkeling van een programmeertaal die kon worden gebruikt voor zakelijke doeleinden, zoals salarisadministratie, inventarisatie en analyse van bedrijfsgegevens \autocite{NMAH2013}.
 In mei 1959 werd het Committee on Data Systems Languages, bekend als CODASYL, opgericht en gefinancierd door het Ministerie van Defensie om een nieuwe programmeertaal te ontwerpen en te ontwikkelen die voldeed aan de criteria van Mary Haws. Deze taal kreeg de naam COmmon Business-Oriented Language, of COBOL \autocite{Abby2023}.
 De ontwikkeling van COBOL was gebaseerd op drie pijlers: leesbaarheid (de code moet leesbaar zijn voor zowel programmeurs als leken), overdraagbaarheid (toepassingen moeten snel en gemakkelijk kunnen worden overgezet naar een ander systeem) en flexibiliteit (de taal moet modulair genoeg zijn om zich aan te passen aan veranderende behoeften en technologieën) \autocite{Abby2023}.
 In december 1960 slaagden zij erin COBOL te draaien op zowel een UNIVAC II systeem als een RCA machine \autocite{NMAH2013}.
 
 \subsection{De huidige staat van COBOL}
-Vandaag de dag wordt COBOL nog steeds gebruikt. De studie van \textcite{Reuters2017} toont aan dat 43 procent van de bankindustrie nog steeds steunt op COBOL. Sterker nog 95 procent van de pinautomaten steunen nog steeds aan op de programmeertaal. Volgens de studie van \textcite{MicroFocus2022} staan er momenteel 800 miljard lijnen COBOL in productie. Daarnaast gaven de bevraagden ook aan dat de hoeveelheid COBOL in productie nog zou verhogen. 
+Momenteel wordt COBOL nog steeds gebruikt. De studie van \textcite{Reuters2017} toont aan dat 43 procent van de bankindustrie nog steeds steunt op COBOL. Sterker nog, 95 procent van de pinautomaten steunen op de programmeertaal. Volgens de studie van \textcite{MicroFocus2022} staan er momenteel 800 miljard lijnen COBOL in productie. Daarnaast geven de bevraagden ook aan dat de hoeveelheid COBOL in productie nog zou verhogen. 
 Voor 92 procent van de bevraagden blijven de COBOL-applicaties een strategische asset, die met der tijd ook gemoderniseerd zullen worden. Een voorbeeld hiervan is het integreren van cloud omgevingen en COBOL-applicaties \autocite{MicroFocus2022}.
 
 \section{Native VS cross-platform development}
 \subsection{Wat is native development?}
-Van native ontwikkeling is sprake wanneer een programmeur een toepassing ontwikkelt die alleen op een bepaald platform kan draaien, zoals iOS of Android. Hiervoor moet de programmeur de programmeertaal en tools \autocite{Marchuk} gebruiken die het gekozen platform biedt.
+Er wordt van native development gesproken wanneer een programmeur een toepassing ontwikkelt die alleen op een bepaald platform kan draaien, zoals iOS of Android. Hiervoor moet de programmeur de programmeertaal en tools \autocite{Marchuk} gebruiken die het gekozen platform biedt.
 Om native Android-toepassingen te schrijven, moet de ontwikkelaar Java of Kotlin gebruiken. Talen die native door het iOS-platform worden ondersteund zijn Objective-C en Swift \autocite{Schmitt2022}.
 
 \subsection{Wat is cross-platform development}
@@ -72,7 +72,7 @@ Cross-platform ontwikkeling, ook bekend als multi-platform ontwikkeling, is een 
         Hetzelfde artikel kan bijvoorbeeld een verschillende prijs hebben op de twee platforms omdat de prijsberekening anders is geïmplementeerd.
         \\\hline
     \end{tabular}
-    \caption{De voor- en nadelen van native development}
+    \caption[De voor- en nadelen van native development]{De voor- en nadelen van native development \autocite{KotlinFoundation2023}}
     \label{tab:nativeDevelopmentTable}
 \end{table}
 
@@ -117,45 +117,45 @@ Cross-platform ontwikkeling, ook bekend als multi-platform ontwikkeling, is een 
         
         \\\hline
     \end{tabular}
-    \caption{De voor- en nadelen van cross-platform development}
+    \caption[De voor- en nadelen van cross-platform development]{De voor- en nadelen van cross-platform development \autocite{KotlinFoundation2023}}
     \label{tab:crossPlatformDevelopmentTable}
 \end{table}
 
-Zoals uit Tabel 2.1 \textcite{KotlinFoundation2023} en Tabel 2.2 \textcite{KotlinFoundation2023} op te maken is, is het debat over native VS cross-platform ontwikkeling niet eenvoudig. Elk heeft zijn voor- en nadelen, en voor elk project moet een grondige analyse worden gemaakt om te bepalen welke van deze zaken het belangrijkst zijn voor het project. Als een project hoge prestaties vereist en hoge ontwikkelingskosten minder belangrijk zijn, kunt u ervoor kiezen de toepassingen in de native programmeertaal te ontwikkelen.
+Zoals uit Tabel 2.1 \textcite{KotlinFoundation2023} en Tabel 2.2 \textcite{KotlinFoundation2023} op te maken is, is het debat over native VS cross-platform ontwikkeling niet eenvoudig. Elk heeft zijn voor- en nadelen, en voor elk project moet een grondige analyse worden gemaakt om te bepalen welke van deze zaken het belangrijkst zijn voor het project. Als een project hoge prestaties vereist en hoge ontwikkelingskosten minder belangrijk zijn, kan ervoor gekozen worden om de toepassing in de native programmeertaal te ontwikkelen.
 
 Als het project daarentegen door een klein team wordt ontwikkeld en de applicatie zo snel mogelijk op beide platforms beschikbaar moet zijn, kan voor cross-platform ontwikkeling worden gekozen.
 
 \section{.NET MAUI}
 \subsection{Overzicht van wat .NET MAUI is en het doel ervan}
-.NET MAUI staat voor .NET Multi-platform App UI en is de opvolger van Xamarin.Forms. Terwijl Xamarin.Forms diende als cross-platform programmeertaal die alleen op mobiele platformen kon worden gebruikt, kan .NET MAUI ook worden gebruikt om desktop en Smart TV applicaties te ontwikkelen. NET MAUI is vanaf de grond opgebouwd met uitbreidbaarheid en prestaties in het achterhoofd. Xamarin en .NET MAUI hebben veel overeenkomsten, maar de laatste maakt het ook mogelijk om platform-specifieke code toe te voegen \autocite{BradyGaster2020}.
+.NET MAUI staat voor .NET Multi-platform App UI en is de opvolger van Xamarin.Forms. Terwijl Xamarin.Forms dient als cross-platform programmeertaal die alleen op mobiele platformen kan worden gebruikt, kan .NET MAUI ook worden gebruikt om desktop en Smart TV applicaties te ontwikkelen. NET MAUI is vanaf de grond opgebouwd met uitbreidbaarheid en prestaties in het achterhoofd. Xamarin en .NET MAUI hebben veel gelijkenissen, maar de laatste maakt het ook mogelijk om platform-specifieke code toe te voegen \autocite{BradyGaster2020}.
 
 \subsection{De werking van .NET MAUI}
 \begin{figure}
     \includegraphics{maui_how_it_works}
     \centering
-    \caption{Schematische voorstelling van de bouwstenen van .NET MAUI}
+    \caption[Schematische voorstelling van de bouwstenen van .NET MAUI]{Schematische voorstelling van de bouwstenen van .NET MAUI \autocite{Britch2023}}
     \label{fig:mauiCompilationScheme}
 \end{figure}
-.NET MAUI voorziet in een framework per platform waarmee in C\# geschreven code kan worden gecompileerd voor het gewenste platform. Momenteel heeft .NET MAUI vier platformspecifieke frameworks: .NET voor Android, .NET voor iOS, .NET voor Mac en de Windows UI 3 bibliotheek. Elk van deze frameworks gebruikt de .NET Base Class Library, kortweg BCL, die fungeert als abstractie tussen de geschreven broncode en de verschillende platformen. De BCL vertrouwt op de .NET runtime om de toepassing te compileren. Ook hier zijn verschillende platformspecifieke tools voorzien. Zo is er de Mono runtime voor Android, iOS en macOS, en de .NET CoreCLR voor Windows desktop applicaties \autocite{Britch2023}.
+.NET MAUI voorziet een framework per platform waarmee in C\# geschreven code kan worden gecompileerd voor het gewenste platform. Momenteel heeft .NET MAUI vier platformspecifieke frameworks: .NET voor Android, .NET voor iOS, .NET voor Mac en de Windows UI 3 bibliotheek. Elk van deze frameworks gebruikt de .NET Base Class Library, kortweg BCL, die fungeert als abstractie tussen de geschreven broncode en de verschillende platformen. De BCL vertrouwt op de .NET runtime om de toepassing te compileren. Ook hier zijn verschillende platformspecifieke tools voorzien. Zo is er de Mono runtime voor Android, iOS en macOS, en de .NET CoreCLR voor Windows desktop applicaties \autocite{Britch2023}.
 
-Met BCL kunt u een toepassing maken die op verschillende platforms draait met dezelfde codebasis. Elk platform heeft echter zijn eigen manier om de gebruikersinterface te definiëren, evenals de manier waarop de verschillende elementen met elkaar communiceren en interageren. Dit is waar .NET MAUI u de keuze geeft om verschillende gebruikersinterfaces voor verschillende platformen te creëren of, omgekeerd, één gebruikersinterface voor alle platformen te creëren \autocite{Britch2023}.
+Met BCL kan een toepassing worden gemaakt die op verschillende platforms draait met dezelfde codebasis. Elk platform heeft echter zijn eigen manier om de gebruikersinterface te definiëren, evenals de manier waarop de verschillende elementen met elkaar communiceren en interageren. Dit is waar .NET MAUI u de keuze geeft om verschillende gebruikersinterfaces voor verschillende platformen te creëren of, omgekeerd, één gebruikersinterface voor alle platformen te creëren \autocite{Britch2023}.
 
 \subsection{Een vergelijking tussen .NET MAUI en Xamarin}
 Aangezien .NET MAUI de opvolger is van Xamarin.Forms, zijn er veel overeenkomsten, maar ook veel verschillen. In deze sectie worden de twee frameworks met elkaar vergeleken.
 
 Het eerste grote verschil tussen .NET MAUI en Xamarin is de projectstructuur. In Xamarin wordt bij het aanmaken van een project een projectmap per platform aangemaakt, met als gevolg dat platformspecifieke code en resources (zoals fonts, afbeeldingen...) per project moeten worden onderhouden. Met de .NET MAUI wordt een projectmap aangemaakt die meerdere platformmappen bevat. In deze mappen wordt platformspecifieke code opgeslagen \autocite{Koleva2023}.
 
-Het volgende verschil tussen de twee programmeertalen is de build tooling, .NET MAUI kan de cross-platform .NET CLI (Command Line Interface) gebruiken om projecten te compileren en uit te voeren. Terwijl Xamarin.Forms het .NET framework moet gebruiken om applicaties te bouwen \autocite{Kathiresan2022}.
+Het volgende verschil tussen de twee frameworks is de build tooling, .NET MAUI kan de cross-platform .NET CLI (Command Line Interface) gebruiken om projecten te compileren en uit te voeren. Terwijl Xamarin.Forms het .NET framework moet gebruiken om applicaties te bouwen \autocite{Kathiresan2022}.
 
 Een derde belangrijk verschil tussen Xamarin.Forms en de .NET MAUI zijn de platform-specifieke API's. Xamarin biedt een enkele cross-platform API die werkt op Android, iOS en Windows. Met .NET MAUI wordt voor elk platform een API geleverd, waardoor ontwikkelaars kunnen profiteren van de functies van elk platform \autocite{UXDivers}.
 
-Ten slotte kunt u met .NET MAUI kiezen om de GUI (Graphical User Interface) te bouwen met HTML (HyperText Markup Language) of XAML (Extensible Application Markup Language). Terwijl je met Xamarin.Forms alleen met XAML kon werken \autocite{Kathiresan2022}.
+Ten slotte kan er met .NET MAUI gekozen worden om de GUI (Graphical User Interface) te bouwen met HTML (HyperText Markup Language) of XAML (Extensible Application Markup Language). Terwijl je met Xamarin.Forms alleen met XAML kan werken \autocite{Kathiresan2022}.
 
 \subsection{Een blik op de toekomst van .NET MAUI}
 \begin{figure}[H]
     \includegraphics[scale=0.50]{maui_roadmap}
     \centering
-    \caption{.NET MAUI release schema}
+    \caption[.NET MAUI release schema]{.NET MAUI release schema \autocite{Ramel2022}}
     \label{fig:mauiRoadMap}
 \end{figure}
 
@@ -165,13 +165,13 @@ Daarnaast zal de support voor Xamarin.Forms stopgezet worden in mei 2024. Concre
 
 \section{Real-time applicaties}
 \subsection{Definitie van een real-time applicatie}
-Real-time computing verwijst naar computersystemen die zijn ontworpen om gegevensinvoer in real time te verwerken en erop te reageren, doorgaans binnen milliseconden of microseconden nadat gebeurtenissen zich hebben voorgedaan. 
+Real-time computing verwijst naar computersystemen die zijn ontworpen om gegevensinvoer in real-time te verwerken en erop te reageren, doorgaans binnen milliseconden of microseconden nadat gebeurtenissen zich hebben voorgedaan \autocite{Suse}. 
 
-De reactietijden moeten onmiddellijk aanvoelen en het systeem moet zonder vertraging of onderbreking doorgaan. 
+De reactietijden moeten onmiddellijk lijken en het systeem moet zonder vertraging of onderbreking doorgaan \autocite{Suse}. 
 
-Real-time computing is van cruciaal belang voor toepassingen die onmiddellijke en nauwkeurige gegevensverwerking vereisen, zoals industriële controle, medische toepassingen, luchtvaart, defensie, multimedia, games en financiële handelssystemen. 
+Real-time computing is van cruciaal belang voor toepassingen die onmiddellijke en nauwkeurige gegevensverwerking vereisen, zoals industriële controle, medische toepassingen, luchtvaart, defensie, multimedia, games en financiële handelssystemen \autocite{Suse}. 
 
-Real-time computing vereist gespecialiseerde hardware- en softwarecomponenten, waaronder real-time besturingssystemen, real-time netwerken en synchrone programmeertalen, om het systeem binnen het gewenste tijdsbestek te laten functioneren.
+Real-time computing vereist gespecialiseerde hardware- en softwarecomponenten, waaronder real-time besturingssystemen, real-time netwerken en synchrone programmeertalen, om het systeem binnen het gewenste tijdsbestek te laten functioneren \autocite{Suse}.
 
 \subsection{HyperText Transfer Protocol}
 HTTP is het protocol dat ten grondslag ligt aan het internet. Het protocol wordt gebruikt om gegevensbronnen (zoals HTML, XML, JSON-documenten) op te vragen bij een server \autocite{Cloudflare}.
@@ -179,7 +179,7 @@ HTTP is het protocol dat ten grondslag ligt aan het internet. Het protocol wordt
 \begin{figure}[H]
     \includegraphics{client_server_scheme}
     \centering
-    \caption{Schematische voorstelling van het server-client model}
+    \caption[Schematische voorstelling van het client-server model]{Schematische voorstelling van het client-server model \autocite{Combell}}
     \label{fig:clientServerScheme}
 \end{figure}
 
@@ -188,11 +188,11 @@ HTTP is een client-serverprotocol, wat betekent dat verzoeken om gegevens altijd
 \begin{figure}[H]
     \includegraphics{osi_model}
     \centering
-    \caption{Het OSI model}
+    \caption[Het OSI model]{Het OSI model \autocite{ByteByteGo2022}}
     \label{fig:osiModel}
 \end{figure}
 
-Dit protocol werd oorspronkelijk voorgesteld door Tim Berners-Lee in 1989 en werd gebouwd bovenop de TCP- en IP-protocollen \autocite{MDN2023a}.
+Dit protocol is oorspronkelijk voorgesteld door Tim Berners-Lee in 1989 en is gebouwd bovenop de TCP- en IP-protocollen \autocite{MDN2023a}.
 
 Het HTTP-protocol bevindt zich in de zevende laag (ook toepassingslaag genoemd) van het OSI-model \autocite{MDN2023}
 
@@ -225,7 +225,7 @@ De filosofie van HTTP rust op vier pijlers:\\
 
 Aanvankelijk had het HTTP-protocol geen versienummer (aangegeven door het cijfer achter het teken /). Om de verschillende versies van elkaar te scheiden, kreeg de allereerste implementatie van het HTTP-protocol echter versienummer 0.9 \autocite{MDN2023a}.
 
-Met verzoeken die bestonden uit een enkele regel bestaande uit het type verzoek en de naam van de gegevensbron, was deze versie van HTTP vrij primitief. Ook kon met deze versie alleen een GET-verzoek worden gedaan. Bijgevolg konden alleen gegevens worden gelezen \autocite{Grigorik}
+Met verzoeken die bestaan uit een enkele regel bestaande uit het type verzoek en de naam van de gegevensbron, is deze versie van HTTP vrij primitief. Ook kan met deze versie alleen een GET-verzoek worden gedaan. Bijgevolg kunnen alleen gegevens worden gelezen \autocite{Grigorik}
 
 
 \emph{HTTP/1.0}
@@ -243,7 +243,7 @@ HTTP-versie 1.0 werd uitgebracht in 1990, vijf jaar nadat versie 0.9 was geïntr
     
     \item Statuscode
     
-    Aan elk antwoord wordt een statuscode toegevoegd. Dit is een manier voor de cliënt om bij elk antwoord te controleren of het verzoek al dan niet correct is verwerkt \autocite{FulberGarcia2022}.
+    Aan elk antwoord wordt een statuscode toegevoegd. Dit is een manier voor de client om bij elk antwoord te controleren of het verzoek al dan niet correct is verwerkt \autocite{FulberGarcia2022}.
     
     \item Content-type
     
@@ -259,7 +259,7 @@ HTTP-versie 1.0 werd uitgebracht in 1990, vijf jaar nadat versie 0.9 was geïntr
 \begin{figure}
     \includegraphics{http_1.0_vs_http_1.1_connections}
     \centering
-    \caption{Schematische voorstelling van het verschil tussen niet-herbruikbare en herbruikbare connecties van respectievelijk HTTP/1.0 en HTTP/1.1}
+    \caption[Schematische voorstelling van het verschil tussen niet-herbruikbare en herbruikbare connecties van respectievelijk HTTP/1.0 en HTTP/1.1]{Schematische voorstelling van het verschil tussen niet-herbruikbare en herbruikbare connecties van respectievelijk HTTP/1.0 en HTTP/1.1 \autocite{Hesham2019}}
     \label{fig:httpConnectionScheme}
 \end{figure}
 
@@ -268,15 +268,15 @@ HTTP/1.1 werd een jaar na de release van HTTP/1.0 geïmplementeerd. Dit was slec
 \begin{itemize}
     \item Host header
     
-    Met HTTP/1.1 moest de client het host veld toevoegen aan de header van elke aanvraag. Vóór deze versie was dit niet verplicht. Dankzij dit veld kunnen verzoeken via een proxyserver naar de juiste server worden geleid, met andere woorden, als er verschillende domeinen naar dezelfde locatie verwijzen, kan er toch een onderscheid worden gemaakt om ervoor te zorgen dat het verzoek niet naar de verkeerde server gaat \autocite{FulberGarcia2022}.
+    Met HTTP/1.1 moet de client het host veld toevoegen aan de header van elke aanvraag. Vóór deze versie was dit niet verplicht. Dankzij dit veld kunnen verzoeken via een proxyserver naar de juiste server worden geleid. In de praktijk betekent dit dat als er verschillende domeinen naar dezelfde locatie verwijzen, er toch een onderscheid kan worden gemaakt om ervoor te zorgen dat het verzoek niet naar de verkeerde server gaat \autocite{FulberGarcia2022}.
     
     \item Persistente verbinding
     
-    Zoals hierboven vermeld, moest de client in HTTP-versie 1.0 een verbinding maken voor elk verzoek dat hij wilde verzenden. In versie 1.1 kan de verbinding open worden gehouden totdat de client aangeeft dat hij de verbinding wil sluiten \autocite{MDN2023a}).
+    Zoals hierboven vermeld, moest de client in HTTP-versie 1.0 een verbinding maken voor elk verzoek dat hij wilde verzenden. In versie 1.1 kan de verbinding open worden gehouden totdat de client aangeeft dat hij de verbinding wil sluiten \autocite{MDN2023a}.
     
     \item Continue-status
     
-    Vóór de invoering van de continue status konden sommige verzoeken niet door de server worden verwerkt. Als dit het geval was, werd het verzoek gewoon onbeantwoord afgewezen. Vanaf versie 1.1 kan een cliënt eerst de HTTP-headers van het verzoek aan de server doorgeven. Als de server antwoordt met de status continue (statuscode 100), weet de cliënt dat hij het hele verzoek kan doorsturen en een antwoord van de server kan verwachten \autocite{FulberGarcia2022}.
+    Vóór de invoering van de continue status konden sommige verzoeken niet door de server worden verwerkt. Als dit het geval was, werd het verzoek gewoon onbeantwoord afgewezen. Vanaf versie 1.1 kan een client eerst de HTTP-headers van het verzoek aan de server doorgeven. Als de server antwoordt met de status continue (statuscode 100), weet de client dat hij het hele verzoek kan doorsturen en een antwoord van de server kan verwachten \autocite{FulberGarcia2022}.
     
     \item Aanvullende methoden
     
@@ -286,13 +286,13 @@ HTTP/1.1 werd een jaar na de release van HTTP/1.0 geïmplementeerd. Dit was slec
 
 \emph{HTTP/2.0}
 
-HTTP/2.0 werd uitgebracht in 2015, 18 jaar na 1.1. Het is echter nog niet op grote schaal ingevoerd. Het gebruik van HTTP/2.0 is dan ook een bewuste keuze van de ontwikkelaars \autocite{Ab}.
-HTTP/2.0 brengt echter een aantal geweldige nieuwe functies die nieuwe mogelijkheden bieden, namelijk:
+HTTP/2.0 is uitgebracht in 2015, 18 jaar na 1.1. Het is echter nog niet op grote schaal ingevoerd. Het gebruik van HTTP/2.0 is dan ook een bewuste keuze van de ontwikkelaars \autocite{Ab}.
+HTTP/2.0 brengt een aantal nieuwe functies die nieuwe mogelijkheden bieden, namelijk:
 
 \begin{itemize}
     \item Multiplexing
     
-    In versie 1.1 van het HTTP-protocol werden verzoeken om gegevens sequentieel verwerkt. Dat wil zeggen, het eerste HTML-document werd opgevraagd en geladen, dan het tweede document, ... tot alles geladen was. Dit kon echter tot problemen leiden als een bepaalde bron niet kon worden geladen omdat de rest van de bron werd opgehouden. Met HTTP/2.0 kan een enkele TCP-verbinding worden gebruikt om meerdere verzoeken om gegevens tegelijk te doen. Dit zorgt ervoor dat wanneer het bovengenoemde probleem zich voordoet, de resterende gegevens al kunnen worden geladen \autocite{Cloudflare}.
+    In versie 1.1 van het HTTP-protocol werden verzoeken om gegevens sequentieel verwerkt. Dat wil zeggen, het eerste HTML-document werd opgevraagd en geladen, dan het tweede document, enzoverder tot alles geladen was. Dit kon echter tot problemen leiden als een bepaalde bron niet kon worden geladen omdat de rest van de bron werd opgehouden. Met HTTP/2.0 kan één enkele TCP-verbinding worden gebruikt om meerdere verzoeken tegelijk te doen. Dit zorgt ervoor dat wanneer het bovengenoemde probleem zich voordoet, de resterende gegevens al kunnen worden geladen \autocite{Cloudflare}.
     
     \item Server push
     
@@ -309,16 +309,16 @@ Het WebSocket protocol is een relatief nieuw protocol. Het protocol werd voor he
 
 In december 2011 publiceerde het IETF (Internet Engineering Task Force) de whitepaper die het WebSocket protocol beschreef onder de titel ``RFC 6455 - The WebSocket Protocol'' \autocite{Fette2011}.
 
-Volgens de paper van \textcite{Fette2011} werd het WebSocket protocol ontwikkeld om real-time applicaties mogelijk te maken zonder het zogenaamde ``HTTP long polling'' te misbruiken.
+Volgens de paper van \textcite{Fette2011} is het WebSocket protocol ontwikkeld om real-time applicaties mogelijk te maken zonder het zogenaamde ``HTTP long polling'' te misbruiken.
 
-Bij HTTP long polling stuurt de client een aanvraag uit naar de server. In plaats van direct te antwoorden en daarna de connectie te sluiten, wacht de server met antwoorden totdat er nieuwe data beschikbaar is. Na het uitsturen van het antwoord krijgt de server direct een nieuwe aanvraag van de client \autocite{Singh}. 
+Bij HTTP long polling stuurt de client een aanvraag uit naar de server. In plaats van direct te antwoorden en daarna de connectie te sluiten, wacht de server met antwoorden totdat er nieuwe data beschikbaar is. Na het uitsturen van het antwoord, krijgt de server meteen een nieuwe aanvraag van de client \autocite{Singh}. 
 
-Het WebSocket protocol is full-duplex en laat bidirectionele communicatie toe. Concreet betekent dit dat in plaats van een aanvraag te sturen die enkel beantwoord wordt wanneer er nieuwe data is, is het nu mogelijk om data door te sturen naar de client zonder dat deze een aanvraag verstuurd heeft. Dit zorgt voor een betere performantie ten opzichte van het HTTP long polling \autocite{Fette2011}
+Het WebSocket protocol is full-duplex en laat bidirectionele communicatie toe. Concreet betekent dit dat in plaats van een aanvraag te sturen die enkel beantwoord wordt wanneer er nieuwe data is, het nu mogelijk is om data door te sturen naar de client zonder dat deze een aanvraag verstuurd heeft. Dit zorgt voor een betere performantie ten opzichte van het HTTP long polling \autocite{Fette2011}
 
 \begin{figure}[H]
     \includegraphics{http_long_polling}
     \centering
-    \caption{Schematische voorstelling van HTTP long polling}
+    \caption[Schematische voorstelling van HTTP long polling]{Schematische voorstelling van HTTP long polling \autocite{Ably2020}}
     \label{fig:httpLongPolling}
 \end{figure}
 
